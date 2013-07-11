@@ -49,14 +49,10 @@ void setColor(int lightValue)
     red = 0;
     blue = 255;
     green = 0;
-  }else if(lightValue < 86 && lightValue >= 43){        //PURPLE
+  }else if(lightValue < 43){                            //PURPLE
     red = 255;
     blue = 255;
     green = 0;
-  }else if(lightValue < 43){                            //WHITE
-    red = 255;
-    blue = 255;
-    green = 255;
   }
   
   analogWrite(redPin, red);                             //write RGB values to LED
