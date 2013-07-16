@@ -38,5 +38,14 @@ July 26, 2013</h4>
   170 - 255 = Blue
       
       
-  <h3>4. Music</h3>
-
+  <h3><b>4. Lights and Sound</b></h3>
+  <ol>
+  <li>Use the setup from <b>Multi-Color LED</b></li>
+  <li>Connect the 3.5mm audio jack to analog input '0'</li>
+  <li>Hook up the Male-Male audio cable from your computer to the jack</li>
+  <li>Test this by reading the voltage of your favorite song</li>
+  <li>Program the microcontroller to blink the stop light to the beat of the music</li>
+  <li>Hook up the speakers to the positive and negative pins on the audio jack</li>
+  <li>Ensure that music plays through the speakers</li>
+  </ol>
+    
