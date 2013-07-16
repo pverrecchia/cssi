@@ -1,79 +1,76 @@
-/*
-blinks: 1, 2, 1&2
- */
+//Globals 
 boolean on = false;
-int blink_count = 0;
+int currentState = 0;
 int count = 0;
-int ceiling = 50;
+int ceiling;
+int sensorValue;
 
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(13, OUTPUT); //blue
-  pinMode(12, OUTPUT); //yellow
-  pinMode(11, OUTPUT); //red?
+  //Initialize the output pins
+  
+  //Set the ceiling value
+  ceiling = 25;
 }
 
 void loop() {
-  //int ceiling = round(analogRead(A1)/10.24);
-  int ceiling = 25;
-  delay(2.5);
+  //Get speaker voltage
+  //how can we store the voltage in the sensorValue variable?
+  //HINT! Use the online API
+
   
-  int sensorValue = analogRead(A0);
-   Serial.println(sensorValue);
-  Serial.print(on);
-  if (sensorValue > ceiling && !on)
+  //What should be do if the lights aren't on, but the music is getting louder?
+  if ((sensorValue > ceiling) && !on)
   {
+    //set flag
     on = true;
     
+    //We want to keep track of the number of samples we've taken
+    //How many samples should be between lights changing?
     if (count > 20)
     {
-   
-      if (blink_count <= 2)
+      //When should we increment the state?
+      if (currentState <= 2)
       {
-        Serial.print("here");
-        blink_count ++;
+        currentState ++;
       }
+      //What should we do when we're at the last state
       else
       {
-         blink_count = 0;
+         currentState = 0;
       }
-
       
+      //We should reset the number of samples
       count = 0;
-      
     }
     
-    //mMSerial.print(blink_count);
 
-    if(blink_count == 0)
-    {
-      Serial.print(count);
-      digitalWrite(13, HIGH);
-      Serial.print("b0");
-      count ++;
+    //Switch Statements!
+    switch(currentState){
+      case 0:
+        //Turn one light on
+        
+      case 1:
+        //Turn another light on
+
+      case 2:
+        //Turn a the final light on
+        
+      //What should a switch statement always have?
     }
-    else if (blink_count == 1)
-    {
-      digitalWrite(12, HIGH);
-      Serial.print("b1");
-      count ++;
-    }
-    else if (blink_count == 2)
-    {
-      digitalWrite(11, HIGH);
-      Serial.print("b2");
-      count ++;
-    }
-  }
-  else if (sensorValue < ceiling && on)
-  {
-    on = false;
     
-    digitalWrite(13, LOW);
-    digitalWrite(12, LOW);
-    digitalWrite(11, LOW);
+    count ++;  //increment the number of samples that have been taken
+  }
+  //This happens when the music gets softer
+  else if ((sensorValue < ceiling) && on)
+  {
+    //What happens to the on flag?
+    //What happens to the lights?
+
   }
   
+  //delay
   delay(2.5);
 }
+
+
