@@ -4,10 +4,11 @@
 //July 26, 2013
 
                                                
-int lightValueresistor = 12;                            //Pin declarations
+int lightValueresistor = 0;                            //Pin declarations
 int redPin = 11;             
 int greenPin = 10;           
-int bluePin = 9;             
+int bluePin = 9;    
+int red, green, blue, v = 0;
 
 void setup()
 {
@@ -21,35 +22,36 @@ void setup()
 
 void loop()
 {
-    Serial.println(analogRead(lightValueresistor));     //print lightValueresistor value to console
-    setColor(analogRead(lightValueresistor));           //set LED color based on measured brightness
+    v = analogRead(lightValueresistor);
+    Serial.println(v);     //print lightValueresistor value to console
+    setColor(v);           //set LED color based on measured brightness
                                                 
     delay(10);                                          //delay 10 milliseconds
 }
 
 void setColor(int lightValue)
 {
-  if(lightValue >= 213){                                //RED
+  if(lightValue >= 874){                                //RED
     red = 255;
     blue = 0;
     green = 0;
-  }else if(lightValue < 213 && lightValue >= 170){      //YELLOW
+  }else if(lightValue < 874 && lightValue >= 724){      //YELLOW
     red = 255;
     blue = 0;
     green = 255;
-  }else if(lightValue < 170 && lightValue >= 128){      //GREEN
+  }else if(lightValue < 724 && lightValue >= 574){      //GREEN
     red = 0;
     blue = 0;
     green = 255;
-  }else if(lightValue < 128 && lightValue >= 86){       //TURQUOISE
+  }else if(lightValue < 574 && lightValue >= 424){       //TURQUOISE
     red = 0;
     blue = 255;
     green = 255;
-  }else if(lightValue < 86 && lightValue >= 43){        //BLUE
+  }else if(lightValue < 424 && lightValue >= 274){        //BLUE
     red = 0;
     blue = 255;
     green = 0;
-  }else if(lightValue < 43){                            //PURPLE
+  }else if(lightValue < 274){                            //PURPLE
     red = 255;
     blue = 255;
     green = 0;
