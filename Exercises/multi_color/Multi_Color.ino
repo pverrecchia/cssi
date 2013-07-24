@@ -1,8 +1,10 @@
 // NOTE: Pin declarations (global variables)
-int lightValueresistor = 12;
+int lightValueResistor = 0;                            
 int redPin = 11;             
 int greenPin = 10;           
-int bluePin = 9;             
+int bluePin = 9;    
+int red, green, blue, v = 0;
+         
 
 // NOTE: This is the setup function used to initialize the Arduino
 void setup()
@@ -14,17 +16,17 @@ void setup()
     pinMode(redPin, );      
     pinMode(greenPin, );
     pinMode(bluePin, );
-    pinMode(lightValueresistor, );  
+    pinMode(lightValueResistor, );  
 }
 
 // NOTE: This is the loop function that runs when the Ardunio runs
 void loop()
 {
     // NOTE: This print lightValueresistor value to console
-    Serial.println(analogRead(lightValueresistor));  
+    Serial.println(analogRead(lightValueResistor));  
 
     // NOTE: This sets LED color based on measured brightness   
-    setColor(analogRead(lightValueresistor));
+    setColor(analogRead(lightValueResistor));
            
     // DO: Delay 10 milliseconds                                     
     delay( );                                          
@@ -37,32 +39,32 @@ void setColor(int lightValue)
   // NOTE: Switch statement to make the LED alternate between colors (using RGB values) 
   // according to the light value of the photoresistor
 
-  // DO: If the light value is greater than 213, set the LED to RED
-  if(lightValue >= 213){         
-    red = 255;
+  // DO: If the light value is greater than 700, set the LED to RED
+  if(lightValue >= 700){         
+    red = 200;
     blue = 0;
     green = 0;
 
   }
 
-  // DO: Else if the light value is between 170 and 213, set the LED to YELLOW
-  else if(lightValue < 213 && lightValue >= 170){
+  // DO: Else if the light value is between 600 and 700, set the LED to YELLOW
+  else if(lightValue < 700 && lightValue >= 600){
 
   }
 
-  // DO: Else if the light value is between 128 and 170, set the LED to GREEN
+  // DO: Else if the light value is between 500 and 600, set the LED to GREEN
   else if(lightValue < && lightValue >=){ 
 
   }
 
-  // DO: Else if the light value is between 86 and 128, set the LED to TURQUOISE (set blue and green to high)
+  // DO: Else if the light value is between 400 and 500, set the LED to TURQUOISE (set blue and green to high)
   else if(){
 
   }
 
-  // DO: Else if the light value is between 43 and 86, set the LED to BLUE
+  // DO: Else if the light value is between 300 and 400, set the LED to BLUE
 
-  // DO: Else if the light value is less than 43, set the LED to PURPLE
+  // DO: Else if the light value is less than 300, set the LED to PURPLE
   
   // NOTE: Write RGB values to LED
   analogWrite(redPin, red);
