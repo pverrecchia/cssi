@@ -10,7 +10,7 @@
 // constants won't change. Used here to 
 // set pin numbers:
 const int redPin =  13;      // the number of the LED pin
-const int bluePin =  14; 
+const int yellowPin =  14; 
 const int greenPin =  15;
 
 int state = 0; //0 = off 1 = red 2 = yellow 3 = green
@@ -24,7 +24,7 @@ long interval = 1000;           // interval at which to blink (milliseconds)
 void setup() {
   // set the digital pin as output:
   pinMode(redPin, OUTPUT);      
-  pinMode(bluePin, OUTPUT);   
+  pinMode(yellowPin, OUTPUT);   
   pinMode(greenPin, OUTPUT);
 
   redState = HIGH;
@@ -51,10 +51,10 @@ void loop()
     switch(state){
       case 1:
          digitalWrite(redPin, LOW);
-         digitalWrite(bluePin, HIGH);
+         digitalWrite(yellowPin, HIGH);
          break;
       case 2:
-         digitalWrite(bluePin, LOW);
+         digitalWrite(yellowPin, LOW);
          digitalWrite(greenPin, HIGH);
          break;
       case 3:
@@ -63,12 +63,12 @@ void loop()
          break;
       default:
          digitalWrite(redPin, LOW);
-         digitalWrite(bluePin, LOW);
+         digitalWrite(yellowPin, LOW);
          digitalWrite(greenPin, LOW);
       break; 
     }
 
     //determine what state to move to next
-    state = (state%3)+1;
+    state = (state + 1) % 3;
   }
 }
