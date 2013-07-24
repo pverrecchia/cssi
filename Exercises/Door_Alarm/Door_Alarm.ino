@@ -4,11 +4,11 @@ int restValue = 0;	  // NOTE: Value of the sensor at rest
 
 void setup() {
   pinMode( , );  // DO: Set Pin 13 to OUTPUT mode
-  Serial.begin(9600); // Beginning the serial to print
+  Serial.begin(9600); // NOTE: Beginning the serial to print
 }
 
 void loop() {
-	// This is where the value from the doorknob sensor wire is read in
+	// NOTE: This is where the value from the doorknob sensor wire is read in
 	sensorValue = analogRead(sensorPin);
 	delay(10);  
 	Serial.print(sensorValue);
