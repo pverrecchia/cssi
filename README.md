@@ -1,12 +1,24 @@
 Google CSSI Arduino Workshop
 ============================
 Cambridge, Massachusetts
+
 July 26, 2013
 
 
 Stop Light
 -----------
-  
+The purpose of this project is to simulate a traffic light by programming times LED lights
+
+1.  Set up your hardware.
+2.  We must set our color LED lights to a specific pin in the Arduino.  The red light will be set to pin 10, the blue light (which we will pretend is yellow) is set to pin 11, etc... We will also set time in between each consecutive light blink.
+3.  Next we will set up the main body of our loop, the part of the code which the Arduino will continuously execute.  In our program we have 4 different states:
+a.  Just the yellow pin is on (Case 1)
+b.  Just the green pin is on (Case 2)
+c.  Just the red pin is on (Case 3)
+d.  None of the pins are on (default case, if you are not in any of the other cases)
+4.  The command for turning a light on is: `digitalWrite(yellowPin, HIGH)`,and the command for turning it off is: `digitalWrite(yellowPin, LOW)`. Remember that you will have to turn off each light after it is turned on!
+5.  Make the program loop through the 4 cases over and over my using modular (clock) arithmetic.
+
   
 Door Knob Alarm
 ----------------
