@@ -1,7 +1,7 @@
 // NOTE: Constants do not change. Used here to set pin numbers.
-const int redPin =  13;
-const int yellowPin =  14; 
-// DO: Set the constant greenPin to 15
+const int redPin =  11;
+const int yellowPin =  12; 
+// DO: Set the constant greenPin to 13
 
 // NOTE: For different colors -- 0 = off, 1 = red, 2 = yellow, 3 = green
 int state = 0;
@@ -22,8 +22,7 @@ void setup() {
   // DO: Set the greenPin to output mode
 
   // NOTE: Setting the traffic light to red to start
-  redState = HIGH;
-  digitalWrite(redPin, redState);
+  digitalWrite(redPin, HIGH);
   state = 1;
 }
 
