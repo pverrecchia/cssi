@@ -17,6 +17,18 @@ The purpose of this project is to simulate a traffic light by programming times 
 5.  Make the program loop through the 4 cases over and over my using modular (clock) arithmetic.
 
   
+Music
+-----
+Prerequisite: Stop Light
+
+1. Hook 3.5mm audio cable to breadboard
+2. Play music through 8 ohm speakers by touching the wires together.
+	* Does polarity matter?
+3.  Set this up on the breadboard
+4.  Hook a sense line from A0 on the Arduino to the speaker setup.
+5. Determine what voltage would make a good limit to turn music on
+	* Does this match the ceiling set in the code?
+
 Door Knob Alarm
 ----------------
 The purpose of this project is to build a system that lights up an LED every time a doorknob is touched.
@@ -47,7 +59,4 @@ This multi-color light color changes when passing different voltages. Each of th
 5. Now we will set the colors of the multi-color LED. The colors change based on the reduction in voltage. As the digital number representing the measured voltage changes, the colors change from red, to yellow, to green, to turquoise, to blue, and to purple. 
 6.  Lastly, the `analogWrite()` function writes the color values to the LED. Insert the inputs for the blue color. 
 
-
-Music
------
 
