@@ -1,9 +1,6 @@
 Google CSSI Arduino Workshop
 ============================
-Cambridge, Massachusetts
-
-July 26, 2013
-
+Tutorials and code for the four workshop project options.
 
 Stop Light
 -----------
