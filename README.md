@@ -1,42 +1,33 @@
-<h1>Google CSSI Arduino Workshop</h1>
-<h4>Cambridge, Massachusetts <br>
-July 26, 2013</h4>
+Google CSSI Arduino Workshop
+============================
+Cambridge, Massachusetts
+July 26, 2013
 
 
-  <h3>1. Stop Light</li></h3>
+Stop Light
+-----------
   
   
-  Red LED (+) leg on pin 13, (-) leg to ground. <br>
-  Yellow LED (+) leg on pin 14, (-) leg to ground. <br>
-  Green LED (+) leg on pin 15, (-) leg to ground.
-  
-  
-  <h3> 2. Door Knob Alarm</h3>
-  
-    
-  Door Knob Alarm: pretty basic, uses analog input and will utilize the breadboard
-  Need 1 capacitor (~uF), a resistor, and some conductive wire for this project. A little speaker would be nice 
-  for the audio alarm. It will use an analog input that we will need to calibrate to go off when someone touches 
-  the door knob from the opposite side. It’s possible to set it up so the alarm won’t go off when someone touches 
-  the door knob from the same side the sensor is on. 
+Door Knob Alarm
+----------------
     
     
-  <h3>3. Multi-Color Lights</h3>
+Multi-Color Lights
+------------------
+The purpose of this project is to program a multi-color LED, which changes colors as your hand approaches.
 
-      
-  <b>Part 1: Writing to the RGB LED</b>
-  <p>Build off of the stoplight project, where students learned how to output to an LED
-  Explain how to cycle through the colors (with a timer between 0 and 255 so that when you move to the photoresistor, it is the same analogy)
-      
-  <p><b>Part 2: Reading from the photoresistor</b>
-  <p>Get the input from the photoresistor and output it to the console
-  Take the output of the photoresistor and use it to create conditional statements for when to change the RGB LED to 
-  different colors
-  
-  <p>0 - 85 = Red<br>
-  86 - 170 = Green<br>
-  170 - 255 = Blue
-      
-      
-  <h3>4. Music</h3>
+This multi-color light color changes when passing different voltages. Each of the three LEDs share a common cathode (negative) and there are three separate positives. 
+
+![Diagram](diagram.jpg)
+
+1. Set up hardware.
+2. Read through the declared variables, and locate digital pins 9, 10 and 11, and analog pin 0 on the Arduino.
+3. The `setup()` method will begin the serial communication between the Arduino, and the computer. In the void setup() method,  assign the OUTPUT(s) and INPUT(s) using pinMode, for the red, green, blue and photoresistor pins.
+4. The `loop()` method is the part of the code that will repeat continuously. In the void `loop()` method, set the time delay in milliseconds. NOTICE that the timing always operates in milliseconds, and not seconds. 
+5. Now we will set the colors of the multi-color LED. The colors change based on the reduction in voltage. As the digital number representing the measured voltage changes, the colors change from red, to yellow, to green, to turquoise, to blue, and to purple. 
+6.  Lasty, the `analogWrite()` function writes the color values to the LED. Insert the inputs for the blue color. 
+
+
+Music
+-----
 
