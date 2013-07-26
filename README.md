@@ -19,7 +19,18 @@ The purpose of this project is to simulate a traffic light by programming times 
   
 Door Knob Alarm
 ----------------
-    
+The purpose of this project is to build a system that lights up an LED everytime a doorknob is touched.
+
+1. Set up your hardware
+2. Initialize the pin for the LED (pin #13) to OUTPUT mode
+3. Comment out all the code between the `delay(100)` and the two } brackets
+4. Compile and run the code
+5. Observe and record the number that the computer prints out. This is the sensor's value when the doorknob is at rest (aka not touching anything)
+6. Touch the doorknob. Does the computer's output change? Does it get higher or lower? Record this number.
+7. Go to the `if(sensorValue > restValue)` statement. If touching the doorknob caused the computer to output a higher number, then set the inequality so that, when the computer outputs a higher value, the code enters the loop. If touching the doorknob caused the computer to output a lower number, then set the inequality so that, when the computer outputs a lower value, the code enters the loop. This may vary per doorknob.
+8. Go to `delay( );` and set the delay to 100, indicating 100 microseconds. This is because we want the LED to continue to light up for a brief amount of time
+9. Go to `digitalWrite( , );` at the end of the code. This is where you will set the LED pin (located at pin #13) to LOW so that the LED shuts off.
+
     
 Multi-Color Lights
 ------------------
